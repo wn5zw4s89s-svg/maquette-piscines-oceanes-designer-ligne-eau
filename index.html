@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piscines Océanes — construction et entretien de piscines à Saint-Jean-de-Monts depuis 1996</title>
+<meta name="description" content="Piscines traditionnelles maçonnées, rénovation, entretien, SAV et spas à Saint-Jean-de-Monts depuis 1996. Showroom ZAC du Clousis, du lundi au samedi. 02 51 59 39 69.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preload" href="fonts/barlow-semi-condensed-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Piscines Océanes — piste « Trait de côte » — jetons de design
+   Le Designer, 12/11/2026. Polices OFL auto-hébergées (voir prototype/fonts/OFL-*.txt). */
+
+@font-face{font-family:"Barlow Semi Condensed";font-style:normal;font-weight:600;font-display:swap;
+  src:url("fonts/barlow-semi-condensed-600-latin.woff2") format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:400 700;font-display:swap;
+  src:url("fonts/atkinson-hyperlegible-next-latin-var.woff2") format("woff2")}
+
+:root{
+  /* Couleur — dominante « pin » (pinède des photos de Saint-Jean-de-Monts), accent « bassin » (cyan du logo) */
+  --pin-950:#0A1F1B; --pin-900:#10302A; --pin-800:#1C3D36; --pin-700:#2B4A43; --pin-600:#3D5A53;
+  --pin-500:#4C5F59; --pin-400:#6F837D; --pin-300:#8FA6A0; --pin-200:#D5DFDC; --pin-100:#E8EEEC; --pin-50:#F2F6F5;
+  --bassin-600:#007C92; --bassin-500:#00B8D8; --bassin-300:#7FDBEB; --bassin-100:#E0F6FA;
+
+  --c-fond:#FFFFFF;              /* fond de page : blanc pur */
+  --c-surface:var(--pin-50);     /* blocs calmes (horaires, pied de page) */
+  --c-texte:var(--pin-900);      /* 14,2:1 sur blanc */
+  --c-texte-2:var(--pin-500);    /* 6,8:1 sur blanc */
+  --c-bordure:var(--pin-200);    /* filets */
+  --c-trait:var(--pin-300);      /* trait de côte (décoratif) */
+  --c-accent:var(--bassin-500);  /* RÉSERVÉ à l'action n° 1 ; texte pin-900 dessus : 6,0:1 */
+  --c-lien:var(--pin-900);       /* liens soulignés, pas colorés */
+  --c-focus:var(--bassin-600);   /* 4,9:1 sur blanc */
+  --c-succes:#1E6B3A;            /* 6,5:1 */
+  --c-erreur:#B3261E;            /* 6,5:1 */
+
+  /* Typographie — échelle unique 12 → 48 + deux tailles d'affiche */
+  --f-titre:"Barlow Semi Condensed","Arial Narrow",sans-serif;
+  --f-texte:"Atkinson Hyperlegible Next",Verdana,sans-serif;
+  --t-12:12px; --t-14:14px; --t-16:16px; --t-18:18px; --t-20:20px; --t-24:24px;
+  --t-30:30px; --t-36:36px; --t-48:48px; --t-affiche-1:64px; --t-affiche-2:80px;
+  --lh-texte:1.55; --lh-titre:1.08; --ls-titre:-0.01em;
+  --g-normal:400; --g-fort:700; --g-titre:600;
+
+  /* Espacement — échelle unique */
+  --s-4:4px; --s-8:8px; --s-12:12px; --s-16:16px; --s-24:24px; --s-32:32px;
+  --s-48:48px; --s-64:64px; --s-96:96px; --s-128:128px;
+  --largeur:1248px; --mesure:62ch;
+
+  /* Rayons et ombres — un seul parti pris : angles quasi droits, aucune ombre */
+  --r-0:0; --r-2:2px;
+  --ombre:none;
+
+  /* Mouvement — cause/effet seulement */
+  --m-rapide:120ms; --m-normal:200ms; --m-courbe:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-reduced-motion:reduce){:root{--m-rapide:0ms;--m-normal:0ms}}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-fond);color:var(--c-texte);font:var(--g-normal) var(--t-16)/var(--lh-texte) var(--f-texte);font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:var(--c-lien);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--c-focus);outline-offset:3px}
+.saut{position:absolute;left:var(--s-16);top:-64px;background:var(--c-texte);color:#fff;padding:var(--s-12) var(--s-16);z-index:50}
+.saut:focus{top:var(--s-8)}
+.cadre{max-width:var(--largeur);margin:0 auto;padding:0 var(--s-24)}
+h1,h2,h3{font-family:var(--f-titre);font-weight:var(--g-titre);line-height:var(--lh-titre);letter-spacing:var(--ls-titre)}
+.nw{white-space:nowrap}
+
+/* Bandeau maquette */
+.maquette{font-size:var(--t-14);color:var(--c-texte-2);border-bottom:1px solid var(--c-bordure);padding:var(--s-8) 0}
+
+/* En-tête */
+.entete .cadre{display:flex;align-items:center;justify-content:space-between;gap:var(--s-24);min-height:72px}
+.logo{display:inline-flex;align-items:center;min-height:48px}
+.logo img{height:40px;width:auto}
+.nav{display:none}
+.menu summary{list-style:none;cursor:pointer;min-height:44px;min-width:44px;display:flex;align-items:center;padding:0 var(--s-12);border:1px solid var(--c-bordure);border-radius:var(--r-2);font-weight:var(--g-fort)}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{border-color:var(--c-texte)}
+.menu ul{position:absolute;left:0;right:0;top:100%;background:var(--c-fond);border-bottom:1px solid var(--c-bordure);padding:var(--s-8) var(--s-24) var(--s-24);z-index:20}
+.menu li a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid var(--c-bordure);text-decoration:none;font-size:var(--t-18)}
+.entete{position:relative}
+
+/* Héros */
+.heros{padding:var(--s-32) 0 var(--s-48)}
+.heros h1{font-size:38px;max-width:18ch}
+.heros .chapo{font-size:var(--t-18);color:var(--c-texte-2);margin-top:var(--s-16);max-width:44ch}
+.preuve{margin-top:var(--s-24);font-size:var(--t-16)}
+.preuve strong{font-weight:var(--g-fort)}
+.preuve span{color:var(--c-texte-2);font-size:var(--t-14)}
+.action{display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 var(--s-24);background:var(--c-accent);color:var(--pin-900);border:1px solid var(--pin-900);border-radius:var(--r-2);font:var(--g-fort) var(--t-18)/1.2 var(--f-texte);text-decoration:none;transition:transform var(--m-rapide) var(--m-courbe)}
+.action:hover{background:var(--bassin-300)}
+.action:active{transform:translateY(1px)}
+.heros .action{margin-top:var(--s-24)}
+.horaire-court{margin-top:var(--s-12);font-size:var(--t-14);color:var(--c-texte-2)}
+.heros figure{margin-top:var(--s-32)}
+.heros img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* Légende = trait de côte n° 1 : repère + lieu */
+figcaption{display:flex;gap:var(--s-8);align-items:baseline;margin-top:var(--s-8);font-size:var(--t-14);color:var(--c-texte-2)}
+figcaption::before{content:"";flex:0 0 16px;height:1px;background:var(--c-trait);transform:translateY(-4px)}
+
+/* Zone : trait de côte en ligne */
+.zone{margin-top:var(--s-24);font-size:var(--t-14);color:var(--c-texte-2)}
+.zone ol{display:flex;flex-wrap:wrap;gap:var(--s-4) 0;margin-top:var(--s-4)}
+.zone li{display:flex;align-items:center;color:var(--c-texte)}
+.zone li+li::before{content:"";width:16px;height:1px;background:var(--c-trait);margin:0 var(--s-8)}
+.zone li.base{font-weight:var(--g-fort)}
+
+/* Sections */
+section{padding:var(--s-64) 0;border-top:1px solid var(--c-bordure)}
+h2{font-size:var(--t-36);max-width:20ch}
+.intro{margin-top:var(--s-12);color:var(--c-texte-2);max-width:var(--mesure)}
+
+/* Métiers : liste typographique */
+.metiers ul{margin-top:var(--s-32)}
+.metiers li{padding:var(--s-24) 0;border-top:1px solid var(--c-bordure)}
+.metiers li:last-child{border-bottom:1px solid var(--c-bordure)}
+.metiers h3{font-size:var(--t-24)}
+.metiers p{margin-top:var(--s-8);max-width:var(--mesure)}
+.metiers a{display:inline-flex;align-items:center;min-height:44px;margin-top:var(--s-4);font-weight:var(--g-fort)}
+
+/* Réalisations */
+.realisations ul{margin-top:var(--s-32);display:grid;gap:var(--s-32)}
+.realisations img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* Avis */
+.avis .note{margin-top:var(--s-32);font-size:var(--t-18)}
+.avis .note a{display:inline-flex;min-height:44px;align-items:center}
+
+/* Showroom */
+.showroom .grille{display:grid;gap:var(--s-32);margin-top:var(--s-32)}
+.showroom ul.liste li{padding:var(--s-8) 0;border-bottom:1px solid var(--c-bordure)}
+.horaires{background:var(--c-surface);padding:var(--s-24)}
+.horaires h3{font-size:var(--t-20)}
+.horaires dl{display:grid;grid-template-columns:auto 1fr;gap:var(--s-8) var(--s-24);margin-top:var(--s-16)}
+.horaires dt{font-weight:var(--g-fort)}
+.horaires p{margin-top:var(--s-16);font-size:var(--t-14);color:var(--c-texte-2)}
+.adresse{font-style:normal;margin-top:var(--s-16)}
+.adresse a{display:inline-flex;min-height:44px;align-items:center;font-weight:var(--g-fort)}
+.showroom figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* Contact */
+.contact h2{font-size:var(--t-48);max-width:14ch}
+.contact .action{margin-top:var(--s-32)}
+.contact .autres{margin-top:var(--s-24)}
+.contact .autres a{display:inline-flex;min-height:44px;align-items:center}
+
+/* Pied */
+.pied{background:var(--c-surface);padding:var(--s-48) 0 var(--s-128);font-size:var(--t-14);color:var(--c-texte-2)}
+.pied .cadre{display:grid;gap:var(--s-24)}
+.pied strong{color:var(--c-texte)}
+.pied ul{display:flex;flex-wrap:wrap;gap:0 var(--s-24)}
+.pied a{display:inline-flex;min-height:44px;align-items:center;color:var(--c-texte-2)}
+
+/* Barre d'appel mobile (sous le pouce) */
+.barre{position:fixed;left:0;right:0;bottom:0;padding:var(--s-12) var(--s-16) calc(var(--s-12) + env(safe-area-inset-bottom));background:var(--c-fond);border-top:1px solid var(--c-bordure);z-index:30;transition:transform var(--m-normal) var(--m-courbe)}
+.barre.cachee{transform:translateY(110%)}
+.barre .action{width:100%}
+
+/* Tablette et plus */
+@media (min-width:760px){
+  .cadre{padding:0 var(--s-48)}
+  .heros h1{font-size:var(--t-affiche-1)}
+  h2{font-size:var(--t-48)}
+  .metiers ul{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--s-48)}
+  .metiers li:nth-last-child(2){border-bottom:1px solid var(--c-bordure)}
+  .showroom .grille{grid-template-columns:7fr 5fr}
+}
+/* Bureau */
+@media (min-width:1080px){
+  .cadre{padding:0 var(--s-96)}
+  .nav{display:flex;align-items:center;gap:var(--s-24);font-size:var(--t-16)}
+  .nav a{text-decoration:none;display:inline-flex;min-height:44px;min-width:44px;justify-content:center;align-items:center}
+  .nav a:hover{text-decoration:underline}
+  .nav .tel{font-weight:var(--g-fort);padding-left:var(--s-24);border-left:1px solid var(--c-bordure)}
+  .menu{display:none}
+  .heros{padding:var(--s-48) 0 var(--s-96)}
+  .heros .cadre{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-64);align-items:stretch}
+  .heros h1{font-size:var(--t-affiche-1);max-width:13ch}
+  .heros figure{margin-top:0;display:flex;flex-direction:column}
+  .heros picture{flex:1;min-height:0;display:block}
+  .heros img{aspect-ratio:auto;height:100%}
+  .heros .action{display:inline-flex}
+  section{padding:var(--s-96) 0}
+  .metiers .cadre{display:grid;grid-template-columns:5fr 7fr;gap:var(--s-64)}
+  .metiers ul{margin-top:0;display:block}
+  .metiers li:nth-last-child(2){border-bottom:0}
+  .realisations ul{grid-template-columns:repeat(5,1fr);gap:var(--s-16);margin-left:calc(-1 * var(--s-48));margin-right:calc(-1 * var(--s-48))}
+  .realisations img{aspect-ratio:3/4}
+  .zone li+li::before{width:12px;margin:0 6px}
+  .contact .cadre{display:grid;grid-template-columns:7fr 5fr;gap:var(--s-64);align-items:end}
+  .contact .action{display:inline-flex;margin-top:0}
+  .barre{display:none}
+  .pied{padding-bottom:var(--s-48)}
+  .pied .cadre{grid-template-columns:5fr 7fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Piscines Océanes","telephone":"+33251593969","email":"contact@piscinesoceanes.fr","foundingDate":"1996-01-04","numberOfEmployees":12,"address":{"@type":"PostalAddress","streetAddress":"ZAC du Clousis","postalCode":"85160","addressLocality":"Saint-Jean-de-Monts","addressCountry":"FR"},"openingHours":["Mo-Sa 09:00-12:30","Mo-Sa 14:00-18:30"],"areaServed":["Saint-Jean-de-Monts","Saint-Gilles-Croix-de-Vie","Challans","Noirmoutier"],"paymentAccepted":"Chèque, carte bancaire, espèces, virement","knowsLanguage":["fr","en"]}
+</script>
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<aside class="maquette" aria-label="Avertissement"><p class="cadre">Maquette de démonstration non officielle, non commandée par Piscines Océanes. Rien n’est en ligne.</p></aside>
+
+<header class="entete">
+  <div class="cadre">
+    <a class="logo" href="index.html" aria-label="Piscines Océanes, accueil"><img src="img/logo-ligne.png" width="211" height="40" alt="Piscines Océanes"></a>
+    <nav class="nav" aria-label="Menu principal">
+      <a href="construction.html">Construction</a>
+      <a href="entretien-sav.html">Entretien et SAV</a>
+      <a href="spas.html">Spas</a>
+      <a href="#showroom">Showroom</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a class="tel" href="tel:+33251593969">02 51 59 39 69</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="construction.html">Construction et rénovation</a></li>
+        <li><a href="entretien-sav.html">Entretien et SAV</a></li>
+        <li><a href="spas.html">Spas</a></li>
+        <li><a href="#showroom">Showroom et horaires</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<main id="contenu">
+<div class="heros">
+  <div class="cadre">
+    <div>
+      <h1>Construction et entretien de piscines à <span class="nw">Saint-Jean-de-Monts</span>, depuis 1996.</h1>
+      <p class="chapo">Piscines traditionnelles maçonnées, rénovation, contrats d’entretien et SAV. Une équipe de 12 personnes et un showroom ouvert du lundi au samedi.</p>
+      <p class="preuve"><strong>4,9 sur 5</strong>, 117 avis Google <span>(fiche relevée le 11/11/2026)</span></p>
+      <a class="action" id="appel-principal" href="tel:+33251593969">Appeler le 02 51 59 39 69</a>
+      <p class="horaire-court">Lundi au samedi, 9 h–12 h 30 et 14 h–18 h 30.</p>
+    </div>
+    <figure>
+      <picture>
+        <source media="(min-width:1080px)" srcset="img/accueil-bassin-1280.webp">
+        <img src="img/accueil-bassin-960.webp" srcset="img/accueil-bassin-480.webp 480w, img/accueil-bassin-720.webp 720w, img/accueil-bassin-960.webp 960w" sizes="(min-width:1080px) 560px, calc(100vw - 48px)" width="960" height="640" alt="Piscine rectangulaire bordée d'une terrasse en bois et d'un muret de pierre, transats au fond du jardin">
+      </picture>
+      <figcaption>Photo © Piscines Océanes</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="metiers" aria-labelledby="t-metiers">
+  <div class="cadre">
+    <div>
+      <h2 id="t-metiers">La même équipe, de la construction à l’hivernage.</h2>
+      <p class="intro">Construire, rénover, entretenir, dépanner : vous gardez un seul interlocuteur, à Saint-Jean-de-Monts.</p>
+    </div>
+    <ul>
+      <li><h3>Construction</h3><p>Piscines traditionnelles en structure maçonnée, dessinées selon vos souhaits et la configuration de votre jardin.</p><a href="construction.html">La construction de piscine</a></li>
+      <li><h3>Rénovation</h3><p>Le bassin ne vous ressemble plus, le matériel vieillit : on repense le projet ou on remplace les équipements.</p><a href="construction.html#renovation">La rénovation</a></li>
+      <li><h3>Entretien</h3><p>Plusieurs formules de contrat, toutes avec la mise en service en début de saison et l’hivernage.</p><a href="entretien-sav.html">Les contrats d’entretien</a></li>
+      <li><h3>SAV</h3><p>Des techniciens formés au matériel de piscine diagnostiquent et réparent vos équipements en panne.</p><a href="entretien-sav.html#sav">Le dépannage</a></li>
+      <li><h3>Spas</h3><p>Une trentaine de modèles, du spa deux places au spa de nage, dont plusieurs exposés au showroom.</p><a href="spas.html">Les spas</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="realisations" id="realisations" aria-labelledby="t-real">
+  <div class="cadre">
+    <h2 id="t-real">Nos réalisations, en photos.</h2>
+    <p class="intro">Quatre piscines et un spa, choisis parmi les photos publiées par l’entreprise.</p>
+    <ul>
+      <li><figure><img src="img/realisation-1-480.webp" srcset="img/realisation-1-480.webp 480w, img/realisation-1-720.webp 720w, img/realisation-1-960.webp 960w" sizes="(min-width:1080px) 260px, calc(100vw - 48px)" width="480" height="320" loading="lazy" alt="Bassin aux margelles de pierre, entouré d’herbes et de fleurs blanches"><figcaption>Photo © Piscines Océanes</figcaption></figure></li>
+      <li><figure><img src="img/realisation-2-480.webp" srcset="img/realisation-2-480.webp 480w, img/realisation-2-720.webp 720w, img/realisation-2-960.webp 960w" sizes="(min-width:1080px) 260px, calc(100vw - 48px)" width="480" height="320" loading="lazy" alt="Piscine intérieure sous un toit vitré, vue depuis une baie ouverte"><figcaption>Photo © Piscines Océanes</figcaption></figure></li>
+      <li><figure><img src="img/realisation-3-480.webp" srcset="img/realisation-3-480.webp 480w, img/realisation-3-720.webp 720w, img/realisation-3-960.webp 960w" sizes="(min-width:1080px) 260px, calc(100vw - 48px)" width="480" height="320" loading="lazy" alt="Piscine avec escalier d’angle, terrasse en caillebotis et muret de pierre"><figcaption>Photo © Piscines Océanes</figcaption></figure></li>
+      <li><figure><img src="img/realisation-4-480.webp" srcset="img/realisation-4-480.webp 480w, img/realisation-4-720.webp 720w, img/realisation-4-960.webp 960w" sizes="(min-width:1080px) 260px, calc(100vw - 48px)" width="480" height="360" loading="lazy" alt="Spa installé sous un abri, au jardin"><figcaption>Photo © Piscines Océanes</figcaption></figure></li>
+      <li><figure><img src="img/realisation-5-480.webp" srcset="img/realisation-5-480.webp 480w, img/realisation-5-720.webp 720w, img/realisation-5-960.webp 960w" sizes="(min-width:1080px) 260px, calc(100vw - 48px)" width="480" height="320" loading="lazy" alt="Piscine devant une maison à façade orange, avec une lame d’eau tombant d’un mur"><figcaption>Photo © Piscines Océanes</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="avis" id="avis" aria-labelledby="t-avis">
+  <div class="cadre">
+    <div>
+      <h2 id="t-avis">4,9 sur 5, sur 117 avis Google.</h2>
+      <p class="intro">Note et nombre relevés sur la fiche Google de l’entreprise le 11 novembre 2026.</p>
+    </div>
+    <div>
+      <p class="note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Piscines+Oc%C3%A9anes+Saint-Jean-de-Monts" rel="noopener">Lire les 117 avis sur Google</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="showroom" id="showroom" aria-labelledby="t-showroom">
+  <div class="cadre">
+    <h2 id="t-showroom">Le showroom, ouvert toute l’année.</h2>
+    <p class="intro">On y analyse votre eau, pour vous conseiller le traitement adapté.</p>
+    <div class="grille">
+      <div>
+        <figure>
+          <img src="img/showroom-rayons-960.webp" srcset="img/showroom-rayons-480.webp 480w, img/showroom-rayons-720.webp 720w, img/showroom-rayons-960.webp 960w" sizes="(min-width:1080px) 640px, calc(100vw - 48px)" width="960" height="720" loading="lazy" alt="Rayons du magasin : robots de piscine, produits de traitement, matériel">
+          <figcaption>Photo © Piscines Océanes</figcaption>
+        </figure>
+        <ul class="liste" style="margin-top:var(--s-24)">
+          <li>Produits de traitement pour piscine et spa</li>
+          <li>Robots, aqua-bikes, matériel et équipements</li>
+          <li>Plusieurs spas exposés</li>
+        </ul>
+      </div>
+      <div>
+        <div class="horaires">
+          <h3>Horaires</h3>
+          <dl>
+            <dt>Lun.–sam.</dt><dd><span class="nw">9 h–12 h 30</span><br><span class="nw">14 h–18 h 30</span></dd>
+            <dt>Dimanche</dt><dd>Fermé</dd>
+          </dl>
+          <p>Paiement par chèque, carte bancaire, espèces ou virement. On vous reçoit en français ou en anglais.</p>
+        </div>
+        <address class="adresse">
+          ZAC du Clousis<br>85160 Saint-Jean-de-Monts<br>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Piscines+Oc%C3%A9anes+Saint-Jean-de-Monts" rel="noopener">Itinéraire vers le showroom</a>
+        </address>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-contact">
+  <div class="cadre">
+    <div>
+      <h2 id="t-contact">Un projet, une rénovation, une panne ?</h2>
+      <p class="intro">Dites-nous où se trouve le bassin et ce que vous voulez faire. On vous répond du lundi au samedi.</p>
+      <div class="zone">
+        Depuis Saint-Jean-de-Monts, l’équipe intervient jusqu’à
+        <ol aria-label="Zone d’intervention">
+          <li>Saint-Gilles-Croix-de-Vie</li><li>Challans</li><li>Noirmoutier</li>
+        </ol>
+      </div>
+    </div>
+    <div>
+      <a class="action" href="tel:+33251593969">Appeler le 02 51 59 39 69</a>
+      <p class="autres">Ou par écrit : <a href="mailto:contact@piscinesoceanes.fr">contact@piscinesoceanes.fr</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="cadre">
+    <p><strong>Piscines Océanes</strong>, constructeur de piscines à Saint-Jean-de-Monts depuis 1996. SIREN 403 228 737.</p>
+    <ul>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="vie-privee.html">Vie privée</a></li>
+      <li>Aucun cookie, aucune mesure d’audience.</li>
+    </ul>
+  </div>
+</footer>
+
+<div class="barre" id="barre" role="region" aria-label="Appel rapide"><a class="action" href="tel:+33251593969">Appeler le 02 51 59 39 69</a></div>
+<script>
+(function(){var b=document.getElementById('barre'),c=document.getElementById('appel-principal'),k=document.getElementById('contact');if(!('IntersectionObserver' in window)||!b)return;var v={};var o=new IntersectionObserver(function(es){es.forEach(function(e){v[e.target.id]=e.isIntersecting});b.classList.toggle('cachee',!!(v['appel-principal']||v['contact']))});o.observe(c);o.observe(k);})();
+</script>
+</body>
+</html>
